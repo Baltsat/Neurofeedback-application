@@ -1,5 +1,7 @@
 # Neurofeedback-application
 Neuroflame team project for neurotech hackathon
+Presentation: https://www.canva.com/design/DAF16XpGbck/RmIgeDCTH8NKvhpH5y3UGA/edit?utm_content=DAF16XpGbck&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+Video: https://murf.ai/share/lpogm1ah
 
 ![1](https://github.com/Baltsat/Neurofeedback-application/assets/123805024/2ba0999b-ba75-42d0-8043-588faa4c56fb)
 
