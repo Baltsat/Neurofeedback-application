@@ -3,6 +3,7 @@ import ipaddress
 import netifaces
 import numpy as np
 from scipy.signal import savgol_filter, coherence
+import random
 
 from pythonosc import dispatcher
 from pythonosc import osc_server
@@ -54,6 +55,7 @@ def calculate_concentration(data):
 
     concentartion = theta_beta_ratio
     
+    # return concentartion + (random.random() - 0.5)/50
     return concentartion
 
 
@@ -99,3 +101,21 @@ server = osc_server.ThreadingOSCUDPServer((ip_address, port), dispatcher)
 
 print(f"Listening on {ip_address}:{port}")
 server.serve_forever()
+
+
+
+import asyncio
+import websockets
+import json
+
+async def send_metric(websocket, path):
+    global concentration_metric
+
+    while True:
+        await asyncio.sleep(1)  # Adjust the interval as needed
+        await websocket.send(json.dumps({"concentration_metric": concentration_metric}))
+
+start_server = websockets.serve(send_metric, "localhost", 8765)
+
+asyncio.get_event_loop().run_until_complete(start_sersver)
+asyncio.get_event_loop().run_forever()

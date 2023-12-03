@@ -48,3 +48,13 @@ document.addEventListener("DOMContentLoaded", function () {
       firepit.style.filter = "hue-rotate(" + hue + "deg)";
   });
 });
+
+const socket = new WebSocket("ws://localhost:8765");
+
+socket.onmessage = (event) => {
+    const data = JSON.parse(event.data);
+    const concentrationMetric = data.concentration_metric;
+
+    // Update your UI or perform any actions with the concentration metric
+    console.log("Concentration Metric from Python:", concentrationMetric);
+};

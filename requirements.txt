@@ -7,3 +7,4 @@ seaborn
 python-osc
 ipaddress
 netifaces
+websockets
