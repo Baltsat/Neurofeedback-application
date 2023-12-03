@@ -1,0 +1,9 @@
+numpy
+matplotlib
+pylsl
+muselsl
+scikit-learn
+seaborn
+python-osc
+ipaddress
+netifaces
