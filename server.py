@@ -42,7 +42,14 @@ def calculate_concentration_metrics(data):
     
     # Calculate correlation between alpha and beta. From 0 to 1.
     correlation_alpha_beta = (np.corrcoef(alpha, beta)[0, 1] + 1) / 2 
-    concentartion = correlation_alpha_beta
+
+    theta_beta_ratio = np.mean(beta) / np.mean(delta)
+    min_value = 1.5
+    max_value = 6
+    theta_beta_ratio = max(0, min(1, 1 - (theta_beta_ratio - min_value) / (max_value - min_value)))
+
+
+    concentartion = theta_beta_ratio
     
     return concentartion
 
